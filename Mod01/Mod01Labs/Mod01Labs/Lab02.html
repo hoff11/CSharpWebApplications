@@ -1,0 +1,28 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Lab02</title>
+    <script type="text/javascript">
+        function readText(objForm) {
+            strNum1 = objForm.num1.value;
+            strNum2 = objForm.num2.value;
+            //strSum = strNum1 + strNum2;
+            intSum = parseInt(strNum1) + parseInt(strNum2);
+            alert("Sum: " + intSum);
+        }
+
+    </script>
+</head>
+<body>
+    <h1>Add Numbers</h1>
+    <p>Submit two numbers and display the sum</p>
+
+    <form>
+        <input type="text" name="num1" />&nbsp; Num1<br />
+        <input type="text" name="num2" />&nbsp; Num2<br />
+        <input type="button" value="Submit" onclick="readText(this.form)" />
+    </form>
+
+</body>
+</html>
