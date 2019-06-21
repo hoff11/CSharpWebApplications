@@ -67,10 +67,21 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Default.aspx" />
+    <Content Include="Demo04.aspx">
+      <BrowseToURL>~/Demo04.aspx</BrowseToURL>
+    </Content>
+    <Content Include="Demo06.aspx" />
+    <Content Include="Demo07a.html" />
+    <Content Include="Demo07b.aspx" />
+    <Content Include="Demo07c.aspx" />
+    <Content Include="Demo08.aspx" />
     <Content Include="Lab02.html" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="App_Code\Product.cs" />
+    <Content Include="App_Code\Student.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

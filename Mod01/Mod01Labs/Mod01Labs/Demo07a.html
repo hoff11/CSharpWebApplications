@@ -1,0 +1,35 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Demo07a</title>
+    <script type="text/javascript">
+      function SendForm1Data()
+      { document.forms["Form1"].submit(); }
+
+      function SendForm2Data()
+      { document.forms["Form2"].submit(); }
+
+    </script>
+</head>
+<body>
+    <div>
+        <p>Send Data with Get:</p>
+        <!—NOTE: When using multiple forms, each must have a unique name! -->
+        <form name="Form1" method="get" action="Demo07b.aspx">
+            <input id="Text1" type="text" value="Get data" name="DataFromText1" />
+            <input id="Submit1" type="submit" value="submit" />
+            <input id="Button1" type="button" value="button" onclick="SendForm1Data()" />
+        </form>
+    </div>
+    <hr />
+    <div>
+        <p>Send Data with Post:</p>
+        <form name="Form2" method="post" action="Demo07c.aspx">
+            <input id="Text2" type="text" value="Post data" name="DataFromText2" />
+            <input id="Submit2" type="submit" value="submit" />
+            <input id="Button2" type="button" value="button" onclick="SendForm2Data()" />
+        </form>
+    </div>
+</body>
+</html>
