@@ -1,0 +1,86 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Buttons and jQuery</title>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+
+    <!--CSS -->
+    <style>
+        .table.table-Gold {
+            background-color: gold;
+        }
+
+        .table.table-Purple {
+            background-color: mediumpurple;
+        }
+    </style>
+
+    <!--JQuery Code with Bootstrap styles -->
+    <!-- http://www.w3schools.com/jquery/jquery_css_classes.asp -->
+    <!-- http://www.w3schools.com/Bootstrap/Bootstrap_ref_css_buttons.asp -->
+    <script type="text/javascript">
+        $(document).ready(function () {
+
+            $("#buttonGold").click(function () {
+                $("table").removeClass("table-Purple");
+                $("table").addClass("table-Gold");
+                $("#buttonGold").addClass("disabled");
+                $("#buttonPurple").removeClass("disabled");
+            }); //end click
+
+            $("#buttonPurple").click(function () {
+                $("table").toggleClass("table-Purple");
+                $("#buttonPurple").addClass("disabled");
+                $("#buttonGold").removeClass("disabled");
+            }); //end click
+        });//end ready
+    </script>
+</head>
+
+<body>
+    <h1>A Bootstrap table and buttons using JQuery</h1>
+    <table class=" table table-bordered table-hover table-condensed table-Gold">
+        <thead>
+            <tr>
+                <th>ProductID</th>
+                <th>ProductName</th>
+                <th>ProductPrice</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr class="success">
+                <td>1</td>
+                <td>ProdA</td>
+                <td>1.99</td>
+            </tr>
+            <tr class="info">
+                <td>2</td>
+                <td>ProdB</td>
+                <td>2.99</td>
+            </tr>
+            <tr class="danger">
+                <td>3</td>
+                <td>ProdC</td>
+                <td>3.99</td>
+            </tr>
+        </tbody>
+    </table>
+    <br />
+    &nbsp;
+    <div class="btn-group">
+        <button id="buttonGold" type="button" class="btn btn-primary">
+            <span class="glyphicon glyphicon-refresh">&nbsp;Gold</span>
+        </button>
+        <button id="buttonPurple" type="button" class="btn btn-primary">
+            <span class="glyphicon glyphicon-refresh">&nbsp;Purple</span>
+        </button>
+    </div>
+</body>
+</html>

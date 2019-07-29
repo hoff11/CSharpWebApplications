@@ -1,0 +1,70 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="TypicalClassLibrary.EFDbContext">
+    <Position X="9.5" Y="0.5" Width="2.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>EFContext.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TypicalClassLibrary.CustomerType">
+    <Position X="7" Y="0.5" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAgAAAAAQAEAAAAAEAAAEAAAQAAAABAAAIAA=</HashCode>
+      <FileName>CustomerTypes.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="TypicalClassLibrary.Customer">
+    <Position X="2.5" Y="0.5" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>IAEQAAIAAgAAAIAkAAAQAAAAUAAAAggQACAAAAAAAAA=</HashCode>
+      <FileName>Customers.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="TypicalClassLibrary.ParameterFactory">
+    <Position X="7" Y="3.5" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAI=</HashCode>
+      <FileName>ParmeterFactories.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="TypicalClassLibrary.CustomerTypesParameterFactory">
+    <Position X="9.5" Y="4.75" Width="2.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>ParmeterFactories.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TypicalClassLibrary.CustomersParameterFactory">
+    <Position X="9.5" Y="3.25" Width="2.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>ParmeterFactories.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Interface Name="TypicalClassLibrary.ICustomerRepository">
+    <Position X="0.5" Y="0.5" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>IAEQAAAAAAAAAAAAAAAQAAAAUAAAAAgQACAAAAAAAAA=</HashCode>
+      <FileName>Customers.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="TypicalClassLibrary.ICustomerTypeRepository">
+    <Position X="4.5" Y="0.5" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAgAAAAAQAEAAAAAEAAAEAAAQAAAABAAAIAA=</HashCode>
+      <FileName>CustomerTypes.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="TypicalClassLibrary.IParameterFactory">
+    <Position X="4.5" Y="3.5" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>ParmeterFactories.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

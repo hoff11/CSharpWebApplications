@@ -1,0 +1,63 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Bootstrap Columns and Styles</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+
+    <!--CSS -->
+    <!--Remember that..-->.
+    <style>
+        #AddIndividualStyle {
+            background-color: gold;
+        }
+        /* Styles can be individualized*/
+        .text-info {
+            color: darkorange;
+        }
+        /* Styles can overridden*/
+        .text-danger {
+            background-color: yellow;
+        }
+        /* Styles can added to */
+    </style>
+
+</head>
+<body>
+    <p>
+        Bootstrap displays columns vertically on small screens and horizontal on larger one.
+        Columns are set in a <mark>grid of 12 spaces.</mark>
+    </p>
+    <div class="row" style="border-style:dashed">
+        <div class="col-sm-2" style="border-style:solid">.col-sm-2</div>
+        <div class="col-sm-4" style="border-style:solid" id="AddIndividualStyle">.col-sm-4</div>
+    </div>
+    <br />
+    <p>You create a Bootstrap container by adding the class="container" attribute</p>
+    <div class="container" style="border-style:dashed">
+        <div class="row" style="border-style:solid">
+            <div class="col-sm-4" style="border-style:solid">.col-sm-4</div>
+            <div class="col-sm-6" style="border-style:solid">.col-sm-6</div>
+        </div>
+    </div>
+    <br />
+    <h2>Bootstrap applies default styles</h2>
+    <p>
+        Bootstrap applies default styles to common HTML 5 tags
+        that are a bit different then the Browser defaults
+    </p>
+    <h2>Bootstrap has Contextual Colors</h2>
+    <p>There are a set of pre-made color schemes</p>
+    <p class="text-muted">Test</p>
+    <p class="text-primary">Test</p>
+    <p class="text-success">Test</p>
+    <p class="text-info">Test</p>
+    <p class="text-warning">Test</p>
+    <p class="text-danger">Test</p>
+</body>
+</html>

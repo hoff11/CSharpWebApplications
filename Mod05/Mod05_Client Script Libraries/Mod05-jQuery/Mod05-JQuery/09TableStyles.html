@@ -1,0 +1,50 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Table Styles</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <!--CSS -->
+    <style>
+        .table.table-RjRsDEMO {
+            background-color: gold;
+        }
+        /* Styles can sub-classed*/
+    </style>
+</head>
+<body>
+    <h1>A Bootstrap table with 'sub-classes'</h1>
+    <!--These are premade Bootstrap Classes, except the last one, of course -->
+    <table class="table table-bordered table-hover table-condensed table-RjRsDEMO">
+        <thead>
+            <tr>
+                <th>ProductID</th>
+                <th>ProductName</th>
+                <th>ProductPrice</th>
+            </tr>
+        </thead>
+        <tbody>
+            <!--Bootstrap row can use the same style classes for formatting row backgrounds-->
+            <tr class="success">
+                <td>1</td>
+                <td>ProdA</td>
+                <td>1.99</td>
+            </tr>
+            <tr class="info">
+                <td>2</td>
+                <td>ProdB</td>
+                <td>2.99</td>
+            </tr>
+            <tr class="danger">
+                <td>3</td>
+                <td>ProdC</td>
+                <td>3.99</td>
+            </tr>
+        </tbody>
+    </table>
+</body>
+</html>

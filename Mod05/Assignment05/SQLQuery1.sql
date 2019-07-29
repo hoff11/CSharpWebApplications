@@ -1,0 +1,1 @@
+Create table newuser(id int identity primary key(id),name varchar(20), username varchar(50), email varchar(50), reason text);

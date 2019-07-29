@@ -1,0 +1,23 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>HTML Demo01</title>
+</head>
+<body>
+    <p>Post Demo</p>
+    <form action="01PostAndGet.aspx" id="Form1" method="post">
+        <!--Note that we use the name attribute to get data and not the ID!-->
+        <input name="Text1" type="text" value="Using Post"/>
+        <input id="Submit1" type="submit" value="submit" />
+    </form>
+
+    <hr />
+
+    <p>Get Demo</p>
+    <form action="01PostAndGet.aspx" id="Form2" method="get">
+        <!--Note that we use the NAME attribute to get data and not the ID!-->
+        <input name="Text2" type="text" value="Using GET"/> 
+        <input id="Submit2" type="submit" value="submit" />
+    </form>
+</body>
+</html>

@@ -1,0 +1,61 @@
+﻿<%@ Master Language="C#" %>
+
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title>Demo7Master</title>
+    <%--Client Script --%>
+    <script type="text/javascript">
+        //alert("Master Page JavaScript");
+    </script>
+
+    <%--Server Code--%>
+    <script runat="server">
+        protected void HomeButton(object sender, EventArgs e)
+        {
+            Response.Redirect("Home.aspx");
+        }
+        protected void RequestLoginButton(object sender, EventArgs e)
+        {
+            Response.Redirect("RequestLogin.aspx");
+        }
+        protected void AboutUsButton(object sender, EventArgs e)
+        {
+            Response.Redirect("AboutUs.aspx");
+        }
+
+</script>
+
+    <%--CSS--%>
+    <style>
+        .redColor {
+            border: medium dashed #FF0000;
+        }
+    </style>
+
+    <asp:ContentPlaceHolder ID="ContentPlaceHead" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form id="form1" runat="server">
+        <asp:Button text="Home" ID="Home" runat="server" OnClick="HomeButton" />
+        <asp:Button text="Request Login" ID="RequestLogin" runat="server" OnClick="RequestLoginButton"/>
+        <asp:Button text="About Us" ID="AboutUs" runat="server" OnClick="AboutUsButton"/>
+        <br />
+        <hr class="redColor" />
+        <div id="Div1">
+            <asp:ContentPlaceHolder ID="HomePageMain" runat="server">
+            </asp:ContentPlaceHolder>
+        </div>
+        <div id="Div2">
+            <asp:ContentPlaceHolder ID="RequestLoginPage" runat="server">
+            </asp:ContentPlaceHolder>
+        </div>
+        <div id="Div3">
+            <asp:ContentPlaceHolder ID="AboutUsPage" runat="server">
+            </asp:ContentPlaceHolder>
+        </div>
+    </form>
+    <footer>Copyright @Micah Inc</footer>
+</body>
+</html>

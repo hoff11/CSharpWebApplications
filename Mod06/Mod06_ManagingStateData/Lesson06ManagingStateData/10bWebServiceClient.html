@@ -1,0 +1,37 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+    <script src="Scripts/jquery-1.11.1.js" type="text/javascript"></script>
+    <script type="text/javascript">
+
+    $(document).ready(function () {
+        $("#Button1").click(function () {
+            $.ajax({
+                type: "POST",
+                dataType: "json",
+                contentType: "application/json",
+                url: "10aSimpleWebService.aspx/GetServerOutput",
+                success: function (data) {
+                    $("#spanResults").html(data.d);
+                },
+                error: function () {
+                    alert("The call to the web service failed.");
+                }
+            })//end of AJAX lambda
+        });//end of click
+    });//end of ready
+
+    </script>
+</head>
+<body>
+    <form id="form1" runat="server">
+        <div>
+            <input id="Button1" type="button" value="Button1" />
+            <br />
+            <br />
+            <span id="spanResults"></span>
+        </div>
+    </form>
+</body>
+</html>

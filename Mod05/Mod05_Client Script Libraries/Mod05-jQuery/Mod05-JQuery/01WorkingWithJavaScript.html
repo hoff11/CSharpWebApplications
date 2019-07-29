@@ -1,0 +1,20 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>01WorkingWithJavaScript</title>
+    <script type="text/javascript">
+        function InternalFunction(Message) {
+            if (5 == 5) {
+                alert(Message);
+            }
+        }
+    </script>
+    <script src="Scripts/ExternalJavaScriptFile.js"></script>
+</head>
+<body>
+    <input id="Button1" type="button" value="Inline" onclick="if (5 == 5) { alert('Inline button') }" />
+    <input id="Button2" type="button" value="Internal" onclick="InternalFunction('Internal button')" />
+    <input id="Button3" type="button" value="External" onclick="ExternalFunction('External button')" />
+
+</body>
+</html>
