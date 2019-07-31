@@ -11,6 +11,7 @@ using Assignment06.App_Code;
 
 
 
+
 namespace Assignment06
 {
     public partial class WebForm2 : System.Web.UI.Page
@@ -32,14 +33,11 @@ namespace Assignment06
                     command.Connection = connection;
                     connection.Open();
                     command.ExecuteNonQuery();
-                    Label1.Text = "Data inserted succesfully!";
+                    Response.Redirect("Login.aspx");
                 }
                 catch (Exception ex) { Label1.Text += "<b>" + ex.ToString() + "</b>"; }
                 finally { connection.Close(); }
             }
-            string usrName = txtboxName.Text;
-            Session["objP"] = usrName;
-            Response.Redirect("Home.Aspx");
         }
     }
 }

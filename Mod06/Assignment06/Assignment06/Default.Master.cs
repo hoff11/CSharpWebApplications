@@ -12,13 +12,21 @@ namespace Assignment06
     {
         protected void Page_Load (object sender, EventArgs e)
         {
-            if (Session["objP"] != null)
+            if (Request.Cookies["Login"] != null)
             {
-                UserName.Text = "Hello " + Session["objP"].ToString() + "!";
-            }
-            else
-            {
-                UserName.Text = "";
+                if (Session["objP"] != null)
+                {
+                    hello.Text = "Hello ";
+                    string sessionData = Session["objP"].ToString();
+                    nameEditable.Text = sessionData;
+                    logout.Visible = true;
+                    Login.Visible = false;
+                    nameStorage.Value = sessionData;
+                }
+                else
+                {
+                    nameEditable.Text = "";
+                }
             }
         }
         protected void HomeButton(object sender, EventArgs e)
@@ -37,6 +45,17 @@ namespace Assignment06
         protected void Button1_Click(object sender, EventArgs e)
         {
             Response.Redirect("ApiCall.aspx");
+        }
+
+        protected void Login_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("Login.aspx");
+        }
+
+        protected void logout_Click(object sender, EventArgs e)
+        {
+            Session.Clear();
+            Response.Redirect("Login.aspx");
         }
     }
 }

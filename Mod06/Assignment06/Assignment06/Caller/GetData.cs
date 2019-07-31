@@ -13,7 +13,7 @@ namespace Assignment06
         {
             //ApiHelper apiHelper = new ApiHelper();
 
-            string url = "https://na1.api.riotgames.com/lol/summoner/v4/summoners/by-name/cheaptrixxx?api_key=RGAPI-5d05b0b1-3732-45b9-bc3a-c193bd62aeeb";
+            string url = "https://na1.api.riotgames.com/lol/summoner/v4/summoners/by-name/cheaptrixxx?api_key=RGAPI-70055004-e669-4832-8e90-c1adbda8a7be";
 
             using (HttpResponseMessage response = await ApiHelper.Client.GetAsync(url))
             {
