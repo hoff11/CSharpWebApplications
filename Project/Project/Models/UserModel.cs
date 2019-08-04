@@ -4,7 +4,7 @@ using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Web;
 
-namespace Project.Models
+namespace ProjectUI.Models
 {
     public class UserModel
     {
