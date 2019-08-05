@@ -1,7 +1,7 @@
 ﻿USE [master]
 GO
 
-IF  EXISTS (Select name From sys.databases WHERE name = N'DataDrivenAppDemoDB')
+IF  EXISTS (SELECT name FROM sys.databases WHERE name = N'DataDrivenAppDemoDB')
   BEGIN
      -- Close connections to the DataDrivenAppDemoDB database 
     ALTER DATABASE [DataDrivenAppDemoDB] SET SINGLE_USER WITH ROLLBACK IMMEDIATE
@@ -14,9 +14,6 @@ GO
 
 USE [DataDrivenAppDemoDB]
 GO
--- Set Permission for CSharp Login 
--- Create User CSharp for Login CSharp
-go
 
 /****** Create Tables ******/
 CREATE -- Drop
@@ -36,70 +33,24 @@ GO
 
 -- We will create a logging table for this demo (It will make sense later!)
 CREATE TABLE [DemoLog]
-([LogId] [int] NOT NULL PRIMARY KEY Identity, [LoggedAction] [nvarchar](50), [TimeOfAction] [nvarchar](50) ) 
+([LoggedAction] [nvarchar](50), [TimeOfAction] [nvarchar](50) ) 
 Go
 
--- Set Permissions
-Deny Select, Insert, Update, Delete 
- On [Categories]
- To Public
-go
-Deny Select, Insert, Update, Delete 
- On [Products]
- To Public
-go
-Deny Select, Insert, Update, Delete 
- On [DemoLog]
- To Public
-go
-
 /****** Create Views ******/
--- Base Views --
-Create View [vCategories]
-AS
- Select [CategoryId], [CategoryName] From [Categories];
-go
-
-Create View [vProducts]
-AS
- Select [ProductId], [ProductName], [CategoryId] From [Products];
-go
-
-Create View [vDemoLog]
-AS
- Select [LoggedAction], [TimeOfAction] From [DemoLog];
-go
-
--- Report Views --
 CREATE VIEW vProductsByCategories
 AS
-Select        
+SELECT        
   Categories.CategoryName
 , Products.ProductName
-From Categories 
+FROM Categories 
 INNER JOIN Products 
   ON Categories.CategoryId = Products.CategoryId
 Go
 
--- Set Permissions
-Grant Select On [vCategories] To Public
-Grant Select On [vProducts] To Public
-Grant Select On [vDemoLog] To Public
-Grant Select On [vProductsByCategories] To Public
-go
 
 /****** Create Stored Procedures ******/
 
--- Now I create the Transaction Sprocs for each table!
--- Working with SQL often consists of only 4 actions, sometimes referred to as CRUD:
--- Create - INSERT - to store new data
--- Read - Select - to retrieve data
--- Update - UPDATE - to change or modify data.
--- Delete - DELETE - delete or remove data
--- So, we will make stored procedures for each of these actions
-
-/*** CREATE (Insert) ***/
--- First, I create logging Sproc for the demo...
+-- First the logging Sproc
 Create -- Drop
 Procedure pInsDemoLog
 ( @LoggedAction [nvarchar](50) )
@@ -110,6 +61,15 @@ As
   End
 Go
 
+-- Now the Transaction Sprocs!
+-- Working with SQL often consists of only 4 actions, sometimes referred to as CRUD:
+-- Create - INSERT - to store new data
+-- Read - SELECT - to retrieve data
+-- Update - UPDATE - to change or modify data.
+-- Delete - DELETE - delete or remove data
+-- So, we will make stored procedures for each of these actions
+
+/*** CREATE (Insert) ***/
 -- Create Categories
 Create -- Drop
 Procedure pInsCategories
@@ -149,9 +109,8 @@ Exec pInsProducts @ProductName = 'ProdB', @CategoryId = 1
 Exec pInsProducts @ProductName = 'ProdC', @CategoryId = 2
 Go
 
-/*** READ (Select) ***/
--- No DemoLog Select Sproc
 
+/*** READ (Select) ***/
 -- Read Categories
 Create -- Drop
 Procedure pSelCategories
@@ -161,7 +120,8 @@ As
     Select [CategoryId],[CategoryName]
     From [Categories]
 	  Where [CategoryId] =  @CategoryId
-	  Or @CategoryId is null	  
+	  Or @CategoryId is null
+	  
     Exec pInsDemoLog
       @LoggedAction =  'pSelCategories was executed'	  
   End 
@@ -182,6 +142,7 @@ As
     From [Products]
 	  Where [ProductId] = @ProductId 
 	  Or @ProductId is null
+
     Exec pInsDemoLog
       @LoggedAction =  'pSelProducts was executed'	    	  
   End 
@@ -204,6 +165,7 @@ As
 	  Where [Products].[ProductId] = @ProductId
 	    Or  [Categories].[CategoryId] = @CategoryId
 	    Or @ProductId is null And @CategoryId is null
+
     Exec pInsDemoLog
       @LoggedAction =  'pSelProductsByCategory was executed'	    	  
   End 
@@ -216,9 +178,8 @@ Exec pSelProductsByCategory @CategoryId = 1
 Exec pSelProductsByCategory @ProductId = 1, @CategoryId = 1
 Go
 
-/*** UPDATE (Update) ***/
--- No DemoLog Update Sproc
 
+/*** UPDATE (Update) ***/
 -- Update Categories
 Create Procedure pUpdCategories
 (@CategoryId [int], @CategoryName [nvarchar](50))
@@ -228,6 +189,7 @@ As
 	Set 
 	  [CategoryName] = @CategoryName
     Where [CategoryId] = @CategoryId
+	  
     Exec pInsDemoLog
       @LoggedAction =  'pUpdCategories was executed'	      
   End 
@@ -248,6 +210,7 @@ As
 	    [ProductName] = @ProductName
 	  , [CategoryId] = @CategoryId
     Where [ProductId] = @ProductId
+
     Exec pInsDemoLog
       @LoggedAction =  'pUpdProducts was executed'	      
   End 
@@ -258,9 +221,8 @@ Exec pUpdProducts @ProductId = 2, @ProductName = 'ProdBzzz', @CategoryId = 1
 Exec pSelProductsByCategory
 Go
 
-/*** DELETE (Delete) ***/
--- No DemoLog Update Sproc
 
+/*** DELETE (Delete) ***/
 -- Delete Products
 Create Procedure pDelProducts
 (@ProductId [int])
@@ -268,13 +230,15 @@ As
   Begin
     Delete From [Products]
     Where [ProductId] = @ProductId
+
     Exec pInsDemoLog
       @LoggedAction =  'pDelProducts was executed'	     
   End 
 Go
 
 -- Test
-Exec pDelProducts @ProductId = 3
+Exec pDelProducts @ProductId = 2
+
 Go
 
 -- Delete Categories
@@ -284,6 +248,7 @@ As
   Begin
     Delete From [Categories]
     Where [CategoryId] = @CategoryId
+	  
     Exec pInsDemoLog
       @LoggedAction =  'pDelCategories was executed'	  
   End 
@@ -296,23 +261,14 @@ Go
 
 -- Test
 Select * 
-  From Products 
+  from Products 
 Select * 
-  From Categories
+  from Categories
 Select * 
- From vProductsByCategories
-Select * 
-  From  DemoLog 
-go
+  from  DemoLog 
 
--- Set Permissions --
-Grant Exec On [dbo].[pInsDemoLog] To Public;
-Grant Exec On [dbo].[pInsCategories] To Public;
-Grant Exec On [dbo].[pInsProducts] To Public;
-Grant Exec On [dbo].[pSelCategories] To Public;
-Grant Exec On [dbo].[pSelProducts] To Public;
-Grant Exec On [dbo].[pSelProductsByCategory] To Public;
-Grant Exec On [dbo].[pUpdCategories] To Public;
-Grant Exec On [dbo].[pUpdProducts] To Public;
-Grant Exec On [dbo].[pDelCategories] To Public;
-Grant Exec On [dbo].[pDelProducts] To Public;
+Go  
+SELECT CategoryName, ProductName FROM vProductsByCategories
+
+
+

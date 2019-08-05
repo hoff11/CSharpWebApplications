@@ -1,0 +1,30 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28307.106
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TypicalClassLibrary", "TypicalClassLibrary.csproj", "{4400EFD2-FB76-4704-A793-4324CB619111}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SQLCode", "SQLCode", "{495F71FD-2657-48C5-897F-5264FDAF4FC5}"
+	ProjectSection(SolutionItems) = preProject
+		SQLCode\TypicalClassLibrary_SQLCode.sql = SQLCode\TypicalClassLibrary_SQLCode.sql
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{4400EFD2-FB76-4704-A793-4324CB619111}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4400EFD2-FB76-4704-A793-4324CB619111}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4400EFD2-FB76-4704-A793-4324CB619111}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4400EFD2-FB76-4704-A793-4324CB619111}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {87535709-64B3-42DE-A927-98375DE0E199}
+	EndGlobalSection
+EndGlobal
