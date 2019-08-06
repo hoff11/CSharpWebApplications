@@ -98,6 +98,10 @@
                 <asp:ContentPlaceHolder ID="LoginPage" runat="server">
                 </asp:ContentPlaceHolder>
             </div>
+            <div id="Div6">
+                <asp:ContentPlaceHolder ID="AdminPage" runat="server">
+                </asp:ContentPlaceHolder>
+            </div>
         </div>
     </form>
     <footer>Copyright @Micah Inc</footer>

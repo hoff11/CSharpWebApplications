@@ -11,23 +11,5 @@ namespace Assignment07 {
     
     
     public partial class WebForm4 {
-        
-        /// <summary>
-        /// ButtonGetData control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button ButtonGetData;
-        
-        /// <summary>
-        /// DataLabel control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label DataLabel;
     }
 }

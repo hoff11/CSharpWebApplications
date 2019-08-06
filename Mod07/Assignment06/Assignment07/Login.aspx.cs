@@ -21,7 +21,7 @@ namespace Assignment07
         {
             //Not secure but testing
             //add cookie
-            string cs = ConfigurationManager.ConnectionStrings["NewUserForm"].ConnectionString;
+            string cs = ConfigurationManager.ConnectionStrings["UW"].ConnectionString;
             SqlDataAdapter sqlDataAdapter = new SqlDataAdapter("Select * from newuser Where name='" + txtboxName.Text + "' and email='" + txtboxEmail.Text + "'", cs);
             DataTable data = new DataTable();
             sqlDataAdapter.Fill(data);
@@ -38,9 +38,9 @@ namespace Assignment07
             }
             else
             {
-                HyperLink register = new HyperLink();
-                register.NavigateUrl = "RequestLogin.aspx";
-                register.Text = "Request Login";
+                //HyperLink register = new HyperLink();
+                //register.NavigateUrl = "RequestLogin.aspx";
+                //register.Text = "Request Login";
                 
                 loginnotification.Text = $"Please check your Name and email, or register here: <a href=\"RequestLogin.aspx\">Register</a>.";
             }

@@ -20,7 +20,7 @@ namespace Assignment07
         protected async void ButtonGetData_Click1(object sender, EventArgs e)
         {
             var summData = await GetData.LoadData();
-            DataLabel.Text = $"Here is your data {summData.name.ToString()}{ summData.summonerLevel.ToString()}";
+            //DataLabel.Text = $"Here is your data {summData.name.ToString()}{ summData.summonerLevel.ToString()}";
         }
     }
 }

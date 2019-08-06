@@ -57,7 +57,7 @@
                 <asp:TextBox ID="txtboxEmail" runat="server" CssClass="col-sm-9 form-control"></asp:TextBox>
             </div>
             <div class="row formrow justify-content-center">
-                <asp:Button CssClass="" ID="LoginButton" runat="server" Text="Login" UseSubmitBehavior="False" Class="FormButton" OnClick="LoginButton_Click" />
+                <asp:Button CssClass="" ID="LoginButton" runat="server" Text="Login" Class="FormButton" OnClick="LoginButton_Click"  />
             </div>
             <div class="row formrow justify-content-center">
                 <asp:Label ID="loginnotification" runat="server" />

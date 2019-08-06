@@ -18,7 +18,6 @@ namespace DataLibrary.BusinsessLogic
                 EmailAddress = email
             };
 
-
             string sql = @"insert into dbo.[User] (FirstName, LastName, EmailAddress) values (@FirstName, @LastName, @EmailAddress)";
 
             return SqlDataAccess.SaveData(sql, data);
