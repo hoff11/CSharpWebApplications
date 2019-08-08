@@ -140,10 +140,12 @@
     <Content Include="Scripts\popper-utils.js.map" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AvailableClass.cs" />
     <Compile Include="Caller\ApiHelper.cs" />
     <Compile Include="App_Code\PublicUser.cs" />
     <Compile Include="Caller\DataModel.cs" />
     <Compile Include="Caller\DataResultsModel.cs" />
+    <Compile Include="DataAccess.cs" />
     <Compile Include="Default.Master.cs">
       <DependentUpon>Default.Master</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -195,7 +197,6 @@
     <Compile Include="Admin.aspx.designer.cs">
       <DependentUpon>Admin.aspx</DependentUpon>
     </Compile>
-    <Compile Include="SqlConnectionManager.cs" />
     <Compile Include="SqlHelper.cs" />
   </ItemGroup>
   <ItemGroup>
