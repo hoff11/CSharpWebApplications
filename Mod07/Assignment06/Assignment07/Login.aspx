@@ -1,24 +1,14 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Default.Master" AutoEventWireup="true" CodeBehind="Login.aspx.cs" Inherits="Assignment07.WebForm5" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHead" runat="server">
-
-    <%--Client Script, --%>
-    <script type="text/javascript">
-</script>
-    <%--Server Code,--%>
-    <script runat="server">
-
-    </script>
     <%--CSS--%>
     <style type="text/css">
         .mainForm {
             font: bold 14px arial, verdana;
         }
-
             .mainForm > input[type=text], .TextBox4 {
                 width: 100%;
             }
-
         .FormButton {
             display: inline-block;
             border-radius: 4px;
@@ -32,18 +22,14 @@
             cursor: pointer;
             margin: 5px;
         }
-
             .FormButton:hover {
                 color: black
             }
-
         .formrow {
             margin: 5px;
         }
     </style>
 </asp:Content>
-
-
 <asp:Content ID="Login" ContentPlaceHolderID="LoginPage" runat="server">
     <h2>Login</h2>
     <div class="container">

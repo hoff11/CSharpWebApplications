@@ -66,13 +66,14 @@
                 <asp:Button Text="Home" ID="Home" runat="server" OnClick="HomeButton"  />
                 <asp:Button Text="Request Login" ID="RequestLogin" runat="server" OnClick="RequestLoginButton"  />
                 <asp:Button Text="About Us" ID="AboutUs" runat="server" OnClick="AboutUsButton"  />
+                <asp:Button Text="Admin" ID="Admin" runat="server" OnClick="Admin_Click" Visible="true" />
                 <asp:Button ID="Login" runat="server" Text="Login" OnClick="Login_Click"/>
                 <asp:Button ID="logout" runat="server" Text="Logout" OnClick="logout_Click" Visible="false" />
                 <%--<asp:Button ID="Button1" runat="server" Text="Button" OnClick="Button1_Click" />--%>
 
                 <asp:Label ID="hello" runat="server" CssClass="placeholder"></asp:Label>
                 <asp:Label ID="nameEditable" CssClass="userName" runat="server"></asp:Label>
-                <asp:Label ID="nameHidden" CssClass="userNameRed" runat="server">dbdndndnd</asp:Label>
+                <asp:Label ID="nameHidden" CssClass="userNameRed" runat="server"></asp:Label>
                 <asp:HiddenField ID="nameStorage" runat="server" />
             <br />
             <hr class="redColor" />

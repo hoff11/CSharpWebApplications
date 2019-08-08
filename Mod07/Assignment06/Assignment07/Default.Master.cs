@@ -57,5 +57,10 @@ namespace Assignment07
             Session.Clear();
             Response.Redirect("Login.aspx");
         }
+
+        protected void Admin_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("Admin.aspx");
+        }
     }
 }
