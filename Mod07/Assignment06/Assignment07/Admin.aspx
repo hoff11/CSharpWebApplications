@@ -5,7 +5,7 @@
     <asp:Label ID="Label1" runat="server" />
     <asp:Label ID="Label3" runat="server" />
     <asp:Label ID="Label4" runat="server" />
-    <asp:Label ID="Label2" runat="server" />
+    <asp:Label ID="StoredProc2" runat="server" />
     <asp:GridView ID="GridView1" runat="server"></asp:GridView>
     <asp:Table ID="Table1" runat="server">
     </asp:Table>

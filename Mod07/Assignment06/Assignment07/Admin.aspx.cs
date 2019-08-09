@@ -10,6 +10,7 @@ using System.Web.UI.WebControls;
 using static Assignment07.SqlHelper;
 using Dapper;
 using System.Text;
+using System.ComponentModel;
 
 namespace Assignment07
 {
@@ -18,12 +19,15 @@ namespace Assignment07
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            StringBuilder table = new StringBuilder();
+            //instantiate model
             List<AvailableClass> availableclass = new List<AvailableClass>();
+            //instantiate DataAccess class for method
             DataAccess data = new DataAccess();
+            //set model = dapper output
             availableclass = data.GetClass();
-            table.Append("<table>");
-            table.Append("")
+            //convert list to datatable
+            var dtConvert = ConvertToDataTable(availableclass);
+            Label4.Text = ConvertDataTableToHTML(dtConvert);
 
             StoredProcTwo();
         }
@@ -42,9 +46,24 @@ namespace Assignment07
                 SqlDataReader reader = cmd.ExecuteReader();
                 DataTable dt = new DataTable();
                 dt.Load(reader);
-                ConvertDataTableToHTML(dt);
+                StoredProc2.Text = ConvertDataTableToHTML(dt);
                 connection.Close();
             }
+        }
+        public DataTable ConvertToDataTable<T>(IList<T> data)
+        {
+            PropertyDescriptorCollection properties = TypeDescriptor.GetProperties(typeof(T));
+            DataTable table = new DataTable();
+            foreach (PropertyDescriptor prop in properties)
+                table.Columns.Add(prop.Name, Nullable.GetUnderlyingType(prop.PropertyType) ?? prop.PropertyType);
+            foreach (T item in data)
+            {
+                DataRow row = table.NewRow();
+                foreach (PropertyDescriptor prop in properties)
+                    row[prop.Name] = prop.GetValue(item) ?? DBNull.Value;
+                table.Rows.Add(row);
+            }
+            return table;
         }
         public static string ConvertDataTableToHTML(DataTable dt)
         {
@@ -64,6 +83,7 @@ namespace Assignment07
             }
             html += "</table>";
             return html;
+
         }
     }
 }
