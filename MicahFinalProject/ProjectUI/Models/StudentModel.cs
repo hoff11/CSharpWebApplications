@@ -8,10 +8,6 @@ namespace ProjectUI.Models
 {
     public class StudentModel
     {
-        [Display(Name = "Employee ID")]
-        [Range(1000,999999, ErrorMessage = "You need to enter a valid Id")]
-        public int StudentId { get; set; }
-
         [Display(Name = "First Name")]
         [Required(ErrorMessage = "You need to provide your first name.")]
         public string StudentFirstName { get; set; }
