@@ -4,6 +4,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using DataLibrary;
+using DataLibrary.BusinessLogic;
 
 namespace ProjectUI.Controllers
 {
@@ -40,6 +42,9 @@ namespace ProjectUI.Controllers
         {
             if (ModelState.IsValid) //does comply with all of model rules, back end check incase front end fooled.  
             {
+                //call business logic
+                int recordsCreated = StudentProcessor.CreateStudent(studentmodel.StudentFirstName, studentmodel.StudentLastName, studentmodel.StudentEmailAddress);
+
                 return RedirectToAction("Index");
             }
             return View();

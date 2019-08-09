@@ -20,7 +20,7 @@ namespace DataLibrary.BusinessLogic
                 StudentEmailAddress = studentEmailAddress
             };
 
-            string sql = @"insert into dbo.Student (StudentFirstName, StudentLastName, StudentEmailAddress) values (@StudentFirstName, @StudentLastName, @StudentEmailAddress)"
+            string sql = @"insert into dbo.StudentTable (StudentFirstName, StudentLastName, StudentEmailAddress) values (@StudentFirstName, @StudentLastName, @StudentEmailAddress)";
             //return data of type T
             return SqlDataAccess.SaveData(sql, studentdata);
         }
