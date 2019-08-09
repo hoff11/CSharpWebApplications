@@ -1,18 +1,17 @@
 ﻿@model ProjectUI.Models.StudentModel
 
 @{
-    ViewBag.Title = "SignUp";
+    ViewBag.Title = "Student Sign Up";
 }
 
-<h2>SignUp</h2>
+<h2>Sign Up Here</h2>
 
 
 @using (Html.BeginForm()) 
 {
     @Html.AntiForgeryToken()
     
-    <div class="form-horizontal">
-        <h4>StudentModel</h4>
+    <div class="form-horizontal ">
         <hr />
         @Html.ValidationSummary(true, "", new { @class = "text-danger" })
         <div class="form-group">
