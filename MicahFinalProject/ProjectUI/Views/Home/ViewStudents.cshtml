@@ -1,0 +1,54 @@
+﻿@model IEnumerable<ProjectUI.Models.StudentModel>
+
+@{
+    ViewBag.Title = "View Students";
+}
+
+<h2>ViewStudents</h2>
+
+<p>
+    @Html.ActionLink("Create New", "SignUp")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.StudentFirstName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.StudentLastName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.StudentEmailAddress)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.StudentFirstName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.StudentLastName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.StudentEmailAddress)
+        </td>
+        @*<td>
+            @Html.DisplayFor(modelItem => item.StudentConfirmEmailAddress)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.StudentPassword)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.StudentConfirmPassword)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
+            @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
+            @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
+        </td>*@
+    </tr>
+}
+
+</table>

@@ -27,7 +27,7 @@ namespace DataLibrary.BusinessLogic
 
         public static List<StudentModel> LoadStudents()
         {
-            string sql = @"select, StudentFirstName, StudentLastName, StudentEmailAddress
+            string sql = @"select StudentFirstName, StudentLastName, StudentEmailAddress
                             from dbo.StudentTable;";
             //loading full model
             //not parameterized
