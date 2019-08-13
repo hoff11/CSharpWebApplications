@@ -66,6 +66,7 @@
     <Build Include="dbo\Tables\StudentTable.sql" />
     <Build Include="dbo\Tables\StudentClass.sql" />
     <Build Include="dbo\Tables\Classes.sql" />
+    <Build Include="LocalDB_AdvWebDevProject_Final Code.sql" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Publish Profiles\ProjectDB.publish.xml" />
