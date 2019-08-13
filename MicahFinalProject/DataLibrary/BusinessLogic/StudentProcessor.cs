@@ -6,6 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
+
 namespace DataLibrary.BusinessLogic
 {
     public static class StudentProcessor
@@ -32,6 +33,13 @@ namespace DataLibrary.BusinessLogic
             //loading full model
             //not parameterized
             return SqlDataAccess.LoadData<StudentModel>(sql);
+        }
+
+        public static List<ClassesModel> LoadClassesForStudent(int id)
+        {
+            string sql = "dbo.pSelClassesByStudentId @StudentId";
+            int param = id;
+            return SqlDataAccess.LoadDataStudentClasses<ClassesModel>(sql, param);
         }
     }
 }

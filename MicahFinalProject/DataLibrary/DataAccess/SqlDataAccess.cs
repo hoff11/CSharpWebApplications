@@ -13,7 +13,7 @@ namespace DataLibrary.DataAccess
     public static class SqlDataAccess
     {
         //connection string function
-        public static string GetConnStr(string connectionName = "MicahFinalProjectDB")
+        public static string GetConnStr(string connectionName = "AdvWebDevProject")
         {
             return ConfigurationManager.ConnectionStrings[connectionName].ConnectionString;
         }
@@ -28,6 +28,13 @@ namespace DataLibrary.DataAccess
             using(IDbConnection conn = new SqlConnection(GetConnStr()))
             {
                 return conn.Query<T>(sql).ToList();
+            }
+        }
+        public static List<T> LoadDataStudentClasses<T>(string sql, int param)
+        {
+            using (IDbConnection conn = new SqlConnection(GetConnStr()))
+            {
+                return conn.Query<T>(sql, new { StudentId = param }).ToList();
             }
         }
 

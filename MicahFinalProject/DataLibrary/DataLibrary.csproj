@@ -47,6 +47,7 @@
   <ItemGroup>
     <Compile Include="BusinessLogic\StudentProcessor.cs" />
     <Compile Include="DataAccess\SqlDataAccess.cs" />
+    <Compile Include="Models\ClassesModel.cs" />
     <Compile Include="Models\StudentModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

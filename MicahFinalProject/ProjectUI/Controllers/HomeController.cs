@@ -39,7 +39,7 @@ namespace ProjectUI.Controllers
             //ui model
             List<StudentModel> students = new List<StudentModel>();
             //convert datalibrary model to ui model
-            foreach(var row in data)
+            foreach (var row in data)
             {
                 students.Add(new StudentModel
                 {
@@ -51,6 +51,25 @@ namespace ProjectUI.Controllers
             }
 
             return View(students);
+        }
+
+        public ActionResult MyClasses()
+        {
+            ViewBag.Message = "My Class List";
+            var data = StudentProcessor.LoadClassesForStudent(1);
+            List<ClassesModel> myclasses = new List<ClassesModel>();
+
+            foreach (var row in data)
+            {
+                myclasses.Add(new ClassesModel
+                {
+                    ClassId = row.ClassId,
+                    ClassName = row.ClassName,
+                    ClassDate = row.ClassDate,
+                    ClassDescription = row.ClassDescription
+                });
+            }
+            return View(myclasses);
         }
 
         //basic get view
