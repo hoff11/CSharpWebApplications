@@ -45,6 +45,7 @@ namespace DataLibrary.BusinessLogic
             return oUser;
         }
 
+
         public static int UpdateUser(ApplicationUser objUser)
         {
             List<ParameterInfo> parameters = new List<ParameterInfo>();

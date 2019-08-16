@@ -36,6 +36,14 @@ namespace DataLibrary.BusinessLogic
             return roles;
         }
 
+        public static IList<StudentModel> GetAccountByRole(string roleID)
+        {
+            List<ParameterInfo> parameters = new List<ParameterInfo>();
+            parameters.Add(new ParameterInfo() { ParameterName = "Role", ParameterValue = roleID });
+            IList<StudentModel> accounts = DapperSqlHelper.GetRecords<StudentModel>("GetAccountByRole", parameters);
+            return accounts;
+        }
+
         public static AccountInfo GetUserByUsername(string userName)
         {
             List<ParameterInfo> parameters = new List<ParameterInfo>();

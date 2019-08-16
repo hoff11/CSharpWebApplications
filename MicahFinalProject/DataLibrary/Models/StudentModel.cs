@@ -8,9 +8,7 @@ namespace DataLibrary.Models
 {
     public class StudentModel
     {
-        public int Id { get; set; }
-        public string StudentFirstName { get; set; }
-        public string StudentLastName { get; set; }
-        public string StudentEmailAddress { get; set; }
+        public string UserName { get; set; }
+        public string Email { get; set; }
     }
 }

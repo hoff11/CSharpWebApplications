@@ -30,28 +30,7 @@ namespace ProjectUI.Controllers
             return View();
         }
 
-        public ActionResult ViewStudents()
-        {
-            ViewBag.Message = "Student List";
 
-            //list of datalibrary model
-            var data = StudentProcessor.LoadStudents();
-            //ui model
-            List<StudentModel> students = new List<StudentModel>();
-            //convert datalibrary model to ui model
-            foreach (var row in data)
-            {
-                students.Add(new StudentModel
-                {
-                    StudentFirstName = row.StudentFirstName,
-                    StudentLastName = row.StudentLastName,
-                    StudentEmailAddress = row.StudentEmailAddress,
-                    StudentConfirmEmailAddress = row.StudentEmailAddress
-                });
-            }
-
-            return View(students);
-        }
 
         public ActionResult MyClasses()
         {
@@ -87,7 +66,7 @@ namespace ProjectUI.Controllers
             if (ModelState.IsValid) //does comply with all of model rules, back end check incase front end fooled.  
             {
                 //call business logic
-                int recordsCreated = StudentProcessor.CreateStudent(studentmodel.StudentFirstName, studentmodel.StudentLastName, studentmodel.StudentEmailAddress);
+                int recordsCreated = StudentProcessor.CreateStudent(studentmodel.Email, studentmodel.UserName);
 
                 return RedirectToAction("Index");
             }

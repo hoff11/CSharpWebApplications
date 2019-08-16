@@ -75,9 +75,13 @@
     <Build Include="dbo\Stored Procedures\GetAccount.sql" />
     <Build Include="dbo\Stored Procedures\UpdateAccount.sql" />
     <Build Include="dbo\Stored Procedures\NewAccountRole.sql" />
-    <Build Include="dbo\Stored Procedures\GetAccountByEmail.sql" />
+    <Build Include="dbo\Stored Procedures\GetAccountByUserName.sql" />
     <Build Include="dbo\Stored Procedures\GetAccountRole.sql" />
     <Build Include="dbo\Stored Procedures\RemoveAccountRole.sql" />
+    <Build Include="dbo\Stored Procedures\GetAccountByRole.sql" />
+    <Build Include="dbo\Views\vAccount.sql" />
+    <Build Include="dbo\Views\vRole.sql" />
+    <Build Include="dbo\Views\vAccountRole.sql" />
   </ItemGroup>
   <ItemGroup>
     <None Include="dbo\LoadTestData\LoadTestData.sql" />

@@ -4,5 +4,7 @@
     ViewBag.Title = "Index";
 }
 
-    <h1>@Html.LabelFor(m => m.UserName)</h1>
+<h1>@Html.DisplayNameFor(model => model.UserName)</h1>
+
+@Html.ActionLink("Click Here For List Of Student","ViewStudents", "Admin")
 

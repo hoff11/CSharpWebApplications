@@ -11,14 +11,13 @@ namespace DataLibrary.BusinessLogic
 {
     public static class StudentProcessor
     {
-        public static int CreateStudent(string studentFirstName, string studentLastName, string studentEmailAddress)
+        public static int CreateStudent(string studentEmailAddres, string studentUserName)
         {
             //map front end model to data library model
             StudentModel studentdata = new StudentModel
             {
-                StudentFirstName = studentFirstName,
-                StudentLastName = studentLastName,
-                StudentEmailAddress = studentEmailAddress
+                UserName = studentUserName,                
+                Email = studentEmailAddres
             };
 
             string sql = @"insert into dbo.StudentTable (StudentFirstName, StudentLastName, StudentEmailAddress) values (@StudentFirstName, @StudentLastName, @StudentEmailAddress)";
