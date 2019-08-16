@@ -21,7 +21,7 @@ namespace ProjectUI.Controllers
             ViewBag.Message = "Student List";
 
             //list of datalibrary model
-            var data = AccountRoleController.GetAccountByRole("student");
+            var data = AccountRoleController.GetAccountByRole(2);
             //ui model
             List<StudentModel> students = new List<StudentModel>();
             //convert datalibrary model to ui model

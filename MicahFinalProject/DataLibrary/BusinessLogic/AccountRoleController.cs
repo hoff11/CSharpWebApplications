@@ -32,15 +32,15 @@ namespace DataLibrary.BusinessLogic
         {
             List<ParameterInfo> parameters = new List<ParameterInfo>();
             parameters.Add(new ParameterInfo() { ParameterName = "AccountID", ParameterValue = userID });
-            IList<string> roles = DapperSqlHelper.GetRecords<string>("GetAccountRole", parameters);
+            IList<string> roles = DapperSqlHelper.GetRecords<string>("spGet_AccountRole", parameters);
             return roles;
         }
 
-        public static IList<StudentModel> GetAccountByRole(string roleID)
+        public static IList<StudentModel> GetAccountByRole(int roleID)
         {
             List<ParameterInfo> parameters = new List<ParameterInfo>();
-            parameters.Add(new ParameterInfo() { ParameterName = "Role", ParameterValue = roleID });
-            IList<StudentModel> accounts = DapperSqlHelper.GetRecords<StudentModel>("GetAccountByRole", parameters);
+            parameters.Add(new ParameterInfo() { ParameterName = "RoleId", ParameterValue = roleID });
+            IList<StudentModel> accounts = DapperSqlHelper.GetRecords<StudentModel>("spGet_AccountByRole", parameters);
             return accounts;
         }
 
@@ -48,7 +48,7 @@ namespace DataLibrary.BusinessLogic
         {
             List<ParameterInfo> parameters = new List<ParameterInfo>();
             parameters.Add(new ParameterInfo() { ParameterName = "UserName", ParameterValue = userName });
-            AccountInfo oUser = DapperSqlHelper.GetRecord<AccountInfo>("GetAccountByUserName", parameters);
+            AccountInfo oUser = DapperSqlHelper.GetRecord<AccountInfo>("spGet_AccountByUserName", parameters);
             return oUser;
         }
     }

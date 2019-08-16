@@ -33,7 +33,7 @@ namespace DataLibrary.BusinessLogic
         {
             List<ParameterInfo> parameters = new List<ParameterInfo>();
             parameters.Add(new ParameterInfo() { ParameterName = "Id", ParameterValue = id });
-            ApplicationUser oUser = DapperSqlHelper.GetRecord<ApplicationUser>("GetAccount", parameters);
+            ApplicationUser oUser = DapperSqlHelper.GetRecord<ApplicationUser>("spGet_Account", parameters);
             return oUser;
         }
 
@@ -41,7 +41,7 @@ namespace DataLibrary.BusinessLogic
         {
             List<ParameterInfo> parameters = new List<ParameterInfo>();
             parameters.Add(new ParameterInfo() { ParameterName = "Email", ParameterValue = userName });
-            ApplicationUser oUser = DapperSqlHelper.GetRecord<ApplicationUser>("GetAccountByEmail", parameters);
+            ApplicationUser oUser = DapperSqlHelper.GetRecord<ApplicationUser>("spGet_AccountByEmail", parameters);
             return oUser;
         }
 

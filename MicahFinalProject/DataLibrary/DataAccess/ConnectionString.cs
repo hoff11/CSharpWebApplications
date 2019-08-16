@@ -10,7 +10,7 @@ namespace DataLibrary.DataAccess
     public static class ConnectionString
     {
         //connection string function
-        public static string GetConnStr(string connectionName = "MicahProjectHome")
+        public static string GetConnStr(string connectionName = "MicahFinal")
         {
             return ConfigurationManager.ConnectionStrings[connectionName].ConnectionString;
         }
