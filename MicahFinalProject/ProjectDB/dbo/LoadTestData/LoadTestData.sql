@@ -1,12 +1,14 @@
-﻿DECLARE @RoleIDAdmin nvarchar(50),
-	@RoleIDMember nvarchar(50),
+﻿Use MicahProject
+Go 
+DECLARE @RoleIDAdmin nvarchar(50),
+	@RoleIDStudent nvarchar(50),
 	@AccountIDAdmin nvarchar(50),
-	@AccountIDMember nvarchar(50)
+	@AccountIDStudent nvarchar(50)
 			
 SET @RoleIDAdmin = NewID()
-SET @RoleIDMember = NewID()
+SET @RoleIDStudent = NewID()
 SET @AccountIDAdmin = NewID()
-SET @AccountIDMember = NewID()
+SET @AccountIDStudent = NewID()
 		
 INSERT INTO Role(
 	ID,

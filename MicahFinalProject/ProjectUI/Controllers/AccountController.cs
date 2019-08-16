@@ -92,7 +92,7 @@ namespace ProjectUI.Controllers
                                 }
                                 else
                                 {
-                                    return RedirectToAction("Index", "Member");
+                                    return RedirectToAction("Index", "student");
                                 }
                             }
                             return RedirectToLocal(returnUrl);

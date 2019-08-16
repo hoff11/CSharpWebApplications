@@ -18,6 +18,6 @@ BEGIN
     -- Insert statements for procedure here
 	UPDATE Account
 	SET Email = @Email
-	WHERE AccountName = @UserName
+	WHERE UserName = @UserName
 END
 GO

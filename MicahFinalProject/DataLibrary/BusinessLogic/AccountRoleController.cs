@@ -15,7 +15,7 @@ namespace DataLibrary.BusinessLogic
             List<ParameterInfo> parameters = new List<ParameterInfo>();
             parameters.Add(new ParameterInfo() { ParameterName = "AccountID", ParameterValue = userID });
             parameters.Add(new ParameterInfo() { ParameterName = "RoleName", ParameterValue = roleName });
-            int success = DapperSqlHelper.ExecuteQuery("NewUserRole", parameters);
+            int success = DapperSqlHelper.ExecuteQuery("NewAccountRole", parameters);
             return success;
         }
 
@@ -24,7 +24,7 @@ namespace DataLibrary.BusinessLogic
             List<ParameterInfo> parameters = new List<ParameterInfo>();
             parameters.Add(new ParameterInfo() { ParameterName = "AccountID", ParameterValue = userID });
             parameters.Add(new ParameterInfo() { ParameterName = "RoleName", ParameterValue = roleName });
-            int success = DapperSqlHelper.ExecuteQuery("DeleteUserRole", parameters);
+            int success = DapperSqlHelper.ExecuteQuery("DeleteAccountRole", parameters);
             return success;
         }
 
@@ -32,15 +32,15 @@ namespace DataLibrary.BusinessLogic
         {
             List<ParameterInfo> parameters = new List<ParameterInfo>();
             parameters.Add(new ParameterInfo() { ParameterName = "AccountID", ParameterValue = userID });
-            IList<string> roles = DapperSqlHelper.GetRecords<string>("GetUserRoles", parameters);
+            IList<string> roles = DapperSqlHelper.GetRecords<string>("GetAccountRole", parameters);
             return roles;
         }
 
         public static AccountInfo GetUserByUsername(string userName)
         {
             List<ParameterInfo> parameters = new List<ParameterInfo>();
-            parameters.Add(new ParameterInfo() { ParameterName = "Accountname", ParameterValue = userName });
-            AccountInfo oUser = DapperSqlHelper.GetRecord<AccountInfo>("GetUserByUsername", parameters);
+            parameters.Add(new ParameterInfo() { ParameterName = "UserName", ParameterValue = userName });
+            AccountInfo oUser = DapperSqlHelper.GetRecord<AccountInfo>("GetAccountByUserName", parameters);
             return oUser;
         }
     }

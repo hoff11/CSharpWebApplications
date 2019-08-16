@@ -5,7 +5,7 @@
 --	SELECT @param1, @param2
 --RETURN 0
 
-CREATE PROCEDURE [dbo].[GetAccountRoles]
+CREATE PROCEDURE [dbo].[GetAccountRole]
 	@AccountID nvarchar(50)
 AS
 BEGIN

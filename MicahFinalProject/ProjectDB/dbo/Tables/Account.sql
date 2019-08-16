@@ -1,6 +1,6 @@
 ﻿CREATE TABLE [dbo].[Account](
 	[Id] [nvarchar](50) NOT NULL,
-	[Accountname] [nvarchar](50) NOT NULL,
+	[UserName] [nvarchar](50) NOT NULL,
 	[Email] [nvarchar](50) NOT NULL,
 	[Password] [nvarchar](50) NOT NULL,
 	[Status] [int] NOT NULL DEFAULT(0),

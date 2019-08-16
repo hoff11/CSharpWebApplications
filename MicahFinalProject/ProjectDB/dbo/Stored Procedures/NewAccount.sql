@@ -8,7 +8,7 @@
 CREATE PROCEDURE [dbo].[NewAccount]
 	-- Add the parameters for the stored procedure here
 	@ID nvarchar(50),
-	@AccountName nvarchar(50),
+	@UserName nvarchar(50),
 	@Email nvarchar(50),
 	@Password nvarchar(50),
 	@Status int
@@ -21,13 +21,13 @@ BEGIN
     -- Insert statements for procedure here
 	INSERT INTO Account(
 		ID,
-		AccountName ,
+		UserName ,
 		Email ,
 		Password ,
 		Status 
 	)VALUES(
 		@ID,
-		@AccountName ,
+		@UserName ,
 		@Email ,
 		@Password ,
 		@Status 

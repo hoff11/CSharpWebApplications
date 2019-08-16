@@ -6,7 +6,7 @@ using System.Web.Mvc;
 
 namespace ProjectUI.Controllers
 {
-    [Authorize(Roles = "Administrator , Member")]
+    [Authorize(Roles = "Administrator , Student")]
     public class StudentController : Controller
     {
         // GET: Member
