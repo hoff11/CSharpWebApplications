@@ -1,0 +1,22 @@
+﻿<ul class="nav navbar-nav navbar-right">
+    @if (DataLibrary.Utilities.Utilities.IfUserInRole("Student"))
+    {
+        <li>@Html.ActionLink("Student", "Index", "Student")</li>
+    }
+    else if (DataLibrary.Utilities.Utilities.IfUserInRole("Administrator"))
+    {
+        <li>@Html.ActionLink("Admin", "Index", "Admin")</li>
+    }
+
+    @if (DataLibrary.Utilities.Utilities.IfUserAuthenticated())
+    {
+        <li>@Html.ActionLink("Logout", "Logout", "Account")</li>
+    }
+    else
+    {
+        <li>@Html.ActionLink("Login", "Login", "Account")</li>
+    }
+</ul>
+@*         <li>
+        @Html.ActionLink("Hello " + User.Identity.GetUserName() + "!", "Index", "Manage", routeValues: null, htmlAttributes: new { title = "Manage" })
+    </li> *@

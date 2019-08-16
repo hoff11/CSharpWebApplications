@@ -25,7 +25,9 @@
                     <li>@Html.ActionLink("Contact", "Contact", "Home")</li>                    
                 </ul>
                 <ul class="nav navbar-nav navbar-right">
-                    <li>@Html.ActionLink("Sign Up", "SignUp", "Home")</li>
+                    @Html.Partial("_LoginPartial")
+                    @*<li>@Html.ActionLink("Register", "Register", "Account")</li>*@
+                    @*<li>@Html.ActionLink("Sign Up", "SignUp", "Home")</li>*@
                 </ul>
             </div>
         </div>
