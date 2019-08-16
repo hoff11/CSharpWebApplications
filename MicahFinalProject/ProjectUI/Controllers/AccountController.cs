@@ -2,6 +2,7 @@
 using DataLibrary.Models;
 using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.Owin;
+using Microsoft.Owin.Logging;
 using Microsoft.Owin.Security;
 using ProjectUI.App_Start;
 using ProjectUI.Models;
@@ -17,9 +18,10 @@ namespace ProjectUI.Controllers
     [Authorize]
     public class AccountController : Controller
     {
-
         private ApplicationSignInManager _signInManager;
         private ApplicationUserManager _userManager;
+        //private readonly ILogger _logger;
+        //public AccountController(ILogger logger) { _logger = logger; }
         public ApplicationSignInManager SignInManager
         {
             get
@@ -31,7 +33,6 @@ namespace ProjectUI.Controllers
                 _signInManager = value;
             }
         }
-
         public ApplicationUserManager UserManager
         {
             get
@@ -43,21 +44,22 @@ namespace ProjectUI.Controllers
                 _userManager = value;
             }
         }
-
+        //GEt Account
+        public ActionResult Index()
+        {
+            return View();
+        }
         public ActionResult Logout()
         {
             SignInManager.AuthenticationManager.SignOut(DefaultAuthenticationTypes.ApplicationCookie);
             return RedirectToAction("Index", "Home");
         }
-
         // GET: Login
         [AllowAnonymous]
-        public ActionResult Login(string returnUrl)
+        public ActionResult Login()
         {
-            ViewBag.ReturnUrl = returnUrl;
             return View();
         }
-
         [HttpPost]
         [AllowAnonymous]
         [ValidateAntiForgeryToken]
@@ -111,6 +113,38 @@ namespace ProjectUI.Controllers
                 }
             }
             return View(objLogin);
+        }
+        [AllowAnonymous]
+        public ActionResult Register()
+        {
+            return View();
+        }
+        [HttpPost]
+        [AllowAnonymous]
+        [ValidateAntiForgeryToken]
+        public async Task<ActionResult> Register(RegisterModel model, string returnUrl)
+        {
+            if (ModelState.IsValid)
+            {
+                var user = new ApplicationUser {UserName = model.UserName, Email = model.Email, Password = model.Password };
+                var result = await UserManager.CreateAsync(user);
+                if (result.Succeeded)
+                {
+                    //_logger.WriteInformation("User created a new account with password.");
+
+                    //var code = await _userManager.GenerateEmailConfirmationTokenAsync(user);
+                    //var callbackUrl = Url.EmailConfirmationLink(user.Id, code, Request.Scheme);
+                    //await _emailSender.SendEmailConfirmationAsync(model.Email, callbackUrl);
+
+                    await SignInManager.SignInAsync(user, isPersistent: false, false);
+                    //_logger.WriteInformation("User created a new account with password.");
+                    return RedirectToLocal(returnUrl);
+                }
+                AddErrors(result);
+            }
+
+            // If we got this far, something failed, redisplay form
+            return View(model);
         }
 
         #region Helpers

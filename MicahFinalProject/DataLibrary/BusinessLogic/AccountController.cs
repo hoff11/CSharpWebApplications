@@ -13,11 +13,11 @@ namespace DataLibrary.BusinessLogic
         {
             List<ParameterInfo> parameters = new List<ParameterInfo>();
             parameters.Add(new ParameterInfo() { ParameterName = "Id", ParameterValue = objUser.Id });
-            parameters.Add(new ParameterInfo() { ParameterName = "AccountName", ParameterValue = objUser.UserName });
+            parameters.Add(new ParameterInfo() { ParameterName = "UserName", ParameterValue = objUser.UserName });
             parameters.Add(new ParameterInfo() { ParameterName = "Email", ParameterValue = objUser.Email });
             parameters.Add(new ParameterInfo() { ParameterName = "Password", ParameterValue = objUser.Password });
             parameters.Add(new ParameterInfo() { ParameterName = "Status", ParameterValue = objUser.Status });
-            int success = DapperSqlHelper.ExecuteQuery("NewAccount", parameters);
+            int success = DapperSqlHelper.ExecuteQuery("spNew_Account", parameters);
             return success;
         }
 
