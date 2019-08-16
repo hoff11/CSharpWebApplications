@@ -15,7 +15,7 @@ namespace DataLibrary.BusinessLogic
             List<ParameterInfo> parameters = new List<ParameterInfo>();
             parameters.Add(new ParameterInfo() { ParameterName = "AccountID", ParameterValue = userID });
             parameters.Add(new ParameterInfo() { ParameterName = "RoleName", ParameterValue = roleName });
-            int success = DapperSqlHelper.ExecuteQuery("NewAccountRole", parameters);
+            int success = DapperSqlHelper.ExecuteQuery("spNew_AccountRole", parameters);
             return success;
         }
 

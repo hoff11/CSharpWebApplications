@@ -17,6 +17,8 @@ namespace DataLibrary.BusinessLogic
                 return Task.Factory.StartNew(() =>
                 {
                     user.Id = Guid.NewGuid().ToString();
+                    user.Status = Models.EnumAccountStatus.Active;
+                    AccountRoleController.NewUserRole(user.Id, "Student");
                     AccountController.NewUser(user);
                 });
             }

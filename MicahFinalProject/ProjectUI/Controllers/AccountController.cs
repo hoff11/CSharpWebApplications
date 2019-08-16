@@ -49,14 +49,14 @@ namespace ProjectUI.Controllers
         {
             return View();
         }
-        public ActionResult Logout()
+        public ActionResult Logout(string returnUrl  )
         {
             SignInManager.AuthenticationManager.SignOut(DefaultAuthenticationTypes.ApplicationCookie);
             return RedirectToAction("Index", "Home");
         }
         // GET: Login
         [AllowAnonymous]
-        public ActionResult Login()
+        public ActionResult Login(string returnUrl)
         {
             return View();
         }

@@ -281,3 +281,35 @@ BEGIN
 	
 END
 GO
+
+DROP PROCEDURE IF EXISTS spNew_Account;
+GO
+
+CREATE PROCEDURE spNew_Account
+	-- Add the parameters for the stored procedure here
+	@ID nvarchar(50),
+	@UserName nvarchar(50),
+	@Email nvarchar(50),
+	@Password nvarchar(50),
+	@Status int
+AS
+BEGIN
+	-- SET NOCOUNT ON added to prevent extra result sets from
+	-- interfering with SELECT statements.
+	SET NOCOUNT ON;
+
+    -- Insert statements for procedure here
+	INSERT INTO Account(
+		ID,
+		UserName ,
+		Email ,
+		Password ,
+		Status 
+	)VALUES(
+		@ID,
+		@UserName ,
+		@Email ,
+		@Password ,
+		@Status 
+	)
+END
