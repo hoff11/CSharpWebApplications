@@ -1,0 +1,47 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28307.106
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ClassRegistrations", "ClassRegistrations\ClassRegistrations.csproj", "{6BFCDB80-A9B2-4AE2-932F-29D577E4ABDB}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SQLCode", "SQLCode", "{C71941C4-5B1C-461C-BBE7-A3144F1D5A12}"
+	ProjectSection(SolutionItems) = preProject
+		SQLCode\LocalDB_AdvWebDevProject_Final Code.sql = SQLCode\LocalDB_AdvWebDevProject_Final Code.sql
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Documents", "Documents", "{D7C311B0-B856-4E4B-AF81-3F060135395F}"
+	ProjectSection(SolutionItems) = preProject
+		Documents\Creating Web Applications_Project.docx = Documents\Creating Web Applications_Project.docx
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ClassRegistrationProcessor", "ClassRegistrationProcessor\ClassRegistrationProcessor.csproj", "{1724C21E-47DC-43D5-A831-1289EBFAC13E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ClassRegistrationProcessorTestHarness", "ClassRegistrationProcessorTestHarness\ClassRegistrationProcessorTestHarness.csproj", "{8D59FEBD-02AB-4073-AB72-CEB88706D93C}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{6BFCDB80-A9B2-4AE2-932F-29D577E4ABDB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6BFCDB80-A9B2-4AE2-932F-29D577E4ABDB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6BFCDB80-A9B2-4AE2-932F-29D577E4ABDB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6BFCDB80-A9B2-4AE2-932F-29D577E4ABDB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1724C21E-47DC-43D5-A831-1289EBFAC13E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1724C21E-47DC-43D5-A831-1289EBFAC13E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1724C21E-47DC-43D5-A831-1289EBFAC13E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1724C21E-47DC-43D5-A831-1289EBFAC13E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8D59FEBD-02AB-4073-AB72-CEB88706D93C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8D59FEBD-02AB-4073-AB72-CEB88706D93C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8D59FEBD-02AB-4073-AB72-CEB88706D93C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8D59FEBD-02AB-4073-AB72-CEB88706D93C}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {E3D69AF9-C5FF-4914-99A2-41A42EFE65DF}
+	EndGlobalSection
+EndGlobal

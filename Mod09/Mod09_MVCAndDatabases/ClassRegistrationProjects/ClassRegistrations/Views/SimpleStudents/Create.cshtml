@@ -1,0 +1,28 @@
+﻿@model ClassRegistrations.Models.Student
+@{ Layout = null; }
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Create</title>
+</head>
+<body>
+    @using (Html.BeginForm())
+    {
+        <h4>Add New Student</h4>
+        <div>
+            <span>Student ID</span> @Html.TextBox("StudentID")<br />
+            <span>Student Name</span> @Html.TextBox("StudentName")<br />
+            <span>Student Email</span> @Html.TextBox("StudentEmail")<br />
+            <span>Student Login</span> @Html.TextBox("StudentLogin")<br />
+            <span>Student Password</span> @Html.TextBox("StudentPassword")<br />
+            <input type="submit" value="Insert" />
+        </div>
+    }
+
+    <div>
+        @Html.ActionLink("Back to List", "Index")
+    </div>
+</body>
+</html>

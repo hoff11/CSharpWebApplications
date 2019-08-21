@@ -1,0 +1,30 @@
+﻿@model WebApplication11.Models.MyDefaulPageData
+@{Layout = null;}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+</head>
+<body>
+    <div>
+        Index View
+        @*<a href="~/WebForms/WebForm1.aspx">~/WebForms/WebForm1.aspx</a>*@
+        <hr />
+        <form action="" method="post">
+            <input type="text" id="TextData" name="TextData" /> @*ASP.NET use Name, While JavaScript uses ID*@
+            <input type="hidden" id="HiddenData" name="HiddenData" value="Some Hidden Data" />
+            <input type="submit" />
+        </form>
+
+        @{ if (IsPost)
+            {
+                <p>Post Data</p>
+                <p> @Model.TextData</p>
+                <p> @Model.HiddenData</p>
+            }
+        }
+    </div>
+</body>
+</html>
