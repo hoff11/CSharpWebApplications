@@ -54,12 +54,12 @@
     <Compile Include="BusinessLogic\AccountRoleController.cs" />
     <Compile Include="BusinessLogic\ApplicationUser.cs" />
     <Compile Include="BusinessLogic\SignInManager.cs" />
-    <Compile Include="BusinessLogic\StudentProcessor.cs" />
+    <Compile Include="BusinessLogic\StudentProcessor_notused.cs" />
     <Compile Include="BusinessLogic\AccountStore.cs" />
     <Compile Include="DataAccess\ConnectionString.cs" />
     <Compile Include="DataAccess\DapperSqlHelper.cs" />
     <Compile Include="DataAccess\ParameterInfo.cs" />
-    <Compile Include="DataAccess\SqlDataAccess.cs" />
+    <Compile Include="DataAccess\SqlDataAccess_notused.cs" />
     <Compile Include="Models\AccountInfo.cs" />
     <Compile Include="Models\AccountRoleInfo.cs" />
     <Compile Include="Models\ClassesModel.cs" />

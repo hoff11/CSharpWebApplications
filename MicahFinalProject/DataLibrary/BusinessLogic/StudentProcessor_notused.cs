@@ -6,10 +6,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-
+#region deprecated
 namespace DataLibrary.BusinessLogic
 {
-    public static class StudentProcessor
+    public static class StudentProcessor_notused
     {
         public static int CreateStudent(string studentEmailAddres, string studentUserName)
         {
@@ -22,7 +22,7 @@ namespace DataLibrary.BusinessLogic
 
             string sql = @"insert into dbo.StudentTable (StudentFirstName, StudentLastName, StudentEmailAddress) values (@StudentFirstName, @StudentLastName, @StudentEmailAddress)";
             //return data of type T
-            return SqlDataAccess.SaveData(sql, studentdata);
+            return SqlDataAccess_notused.SaveData(sql, studentdata);
         }
 
         public static List<StudentModel> LoadStudents()
@@ -31,14 +31,15 @@ namespace DataLibrary.BusinessLogic
                             from dbo.StudentTable;";
             //loading full model
             //not parameterized
-            return SqlDataAccess.LoadData<StudentModel>(sql);
+            return SqlDataAccess_notused.LoadData<StudentModel>(sql);
         }
 
         public static List<ClassesModel> LoadClassesForStudent(int id)
         {
             string sql = "dbo.pSelClassesByStudentId @StudentId";
             int param = id;
-            return SqlDataAccess.LoadDataStudentClasses<ClassesModel>(sql, param);
+            return SqlDataAccess_notused.LoadDataStudentClasses<ClassesModel>(sql, param);
         }
     }
 }
+#endregion

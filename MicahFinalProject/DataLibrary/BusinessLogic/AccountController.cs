@@ -20,7 +20,6 @@ namespace DataLibrary.BusinessLogic
             int success = DapperSqlHelper.ExecuteQuery("spNew_Account", parameters);
             return success;
         }
-
         public static int DeleteUser(ApplicationUser objUser)
         {
             List<ParameterInfo> parameters = new List<ParameterInfo>();
@@ -28,7 +27,6 @@ namespace DataLibrary.BusinessLogic
             int success = DapperSqlHelper.ExecuteQuery("DeleteAccount", parameters);
             return success;
         }
-
         public static ApplicationUser GetUser(string id)
         {
             List<ParameterInfo> parameters = new List<ParameterInfo>();
@@ -36,7 +34,6 @@ namespace DataLibrary.BusinessLogic
             ApplicationUser oUser = DapperSqlHelper.GetRecord<ApplicationUser>("spGet_Account", parameters);
             return oUser;
         }
-
         public static ApplicationUser GetUserByUsername(string userName)
         {
             List<ParameterInfo> parameters = new List<ParameterInfo>();
@@ -44,8 +41,6 @@ namespace DataLibrary.BusinessLogic
             ApplicationUser oUser = DapperSqlHelper.GetRecord<ApplicationUser>("spGet_AccountByEmail", parameters);
             return oUser;
         }
-
-
         public static int UpdateUser(ApplicationUser objUser)
         {
             List<ParameterInfo> parameters = new List<ParameterInfo>();

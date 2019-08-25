@@ -24,7 +24,6 @@ namespace DataLibrary.BusinessLogic
             }
             throw new ArgumentNullException("user");
         }
-
         public Task DeleteAsync(ApplicationUser user)
         {
             if (user != null)
@@ -36,12 +35,10 @@ namespace DataLibrary.BusinessLogic
             }
             throw new ArgumentNullException("user");
         }
-
         public void Dispose()
         {
 
         }
-
         public Task<ApplicationUser> FindByIdAsync(string userId)
         {
             if (!string.IsNullOrEmpty(userId))
@@ -53,7 +50,6 @@ namespace DataLibrary.BusinessLogic
             }
             throw new ArgumentNullException("userId");
         }
-
         public Task<ApplicationUser> FindByNameAsync(string userName)
         {
             if (!string.IsNullOrEmpty(userName))
@@ -65,7 +61,6 @@ namespace DataLibrary.BusinessLogic
             }
             throw new ArgumentNullException("userName");
         }
-
         public ApplicationUser FindByName(string userName)
         {
             if (!string.IsNullOrEmpty(userName))
@@ -74,7 +69,6 @@ namespace DataLibrary.BusinessLogic
             }
             throw new ArgumentNullException("userName");
         }
-
         public Task UpdateAsync(ApplicationUser user)
         {
             if (user != null)
@@ -103,7 +97,6 @@ namespace DataLibrary.BusinessLogic
                 throw new ArgumentNullException("user");
             }
         }
-
         public Task RemoveFromRoleAsync(ApplicationUser user, string roleName)
         {
             if (user != null)
@@ -118,7 +111,6 @@ namespace DataLibrary.BusinessLogic
                 throw new ArgumentNullException("user");
             }
         }
-
         public Task<IList<string>> GetRolesAsync(ApplicationUser user)
         {
             if (user != null)
@@ -134,7 +126,6 @@ namespace DataLibrary.BusinessLogic
                 throw new ArgumentNullException("user");
             }
         }
-
         public Task<bool> IsInRoleAsync(ApplicationUser user, string roleName)
         {
             if (user != null)

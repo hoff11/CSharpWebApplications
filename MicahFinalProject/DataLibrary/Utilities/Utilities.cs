@@ -9,6 +9,7 @@ namespace DataLibrary.Utilities
 {
     public static class Utilities
     {
+        //HttpContext.Current.User.Identity.IsAuthenticated
         public static bool IfUserAuthenticated()
         {
             if (HttpContext.Current.User.Identity.IsAuthenticated)
@@ -17,7 +18,7 @@ namespace DataLibrary.Utilities
             }
             return false;
         }
-
+        //HttpContext.Current.User.IsInRole(roleName)
         public static bool IfUserInRole(string roleName)
         {
             if (IfUserAuthenticated())

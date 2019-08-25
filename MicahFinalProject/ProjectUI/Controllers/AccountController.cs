@@ -18,6 +18,7 @@ namespace ProjectUI.Controllers
     [Authorize]
     public class AccountController : Controller
     {
+        #region Construct
         private ApplicationSignInManager _signInManager;
         private ApplicationUserManager _userManager;
         //private readonly ILogger _logger;
@@ -44,16 +45,19 @@ namespace ProjectUI.Controllers
                 _userManager = value;
             }
         }
-        //GEt Account
+        #endregion
         public ActionResult Index()
         {
             return View();
         }
+        #region Logout
         public ActionResult Logout(string returnUrl  )
         {
             SignInManager.AuthenticationManager.SignOut(DefaultAuthenticationTypes.ApplicationCookie);
             return RedirectToAction("Index", "Home");
         }
+        #endregion
+        #region Login
         // GET: Login
         [AllowAnonymous]
         public ActionResult Login(string returnUrl)
@@ -114,6 +118,8 @@ namespace ProjectUI.Controllers
             }
             return View(objLogin);
         }
+        #endregion
+        #region Register
         [AllowAnonymous]
         public ActionResult Register()
         {
@@ -146,7 +152,7 @@ namespace ProjectUI.Controllers
             // If we got this far, something failed, redisplay form
             return View(model);
         }
-
+        #endregion
         #region Helpers
         private ActionResult RedirectToLocal(string returnUrl)
         {

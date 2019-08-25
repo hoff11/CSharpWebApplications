@@ -18,7 +18,6 @@ namespace DataLibrary.BusinessLogic
             int success = DapperSqlHelper.ExecuteQuery("spNew_AccountRole", parameters);
             return success;
         }
-
         public static int DeleteUserRole(string userID, string roleName)
         {
             List<ParameterInfo> parameters = new List<ParameterInfo>();
@@ -27,7 +26,6 @@ namespace DataLibrary.BusinessLogic
             int success = DapperSqlHelper.ExecuteQuery("DeleteAccountRole", parameters);
             return success;
         }
-
         public static IList<string> GetUserRoles(string userID)
         {
             List<ParameterInfo> parameters = new List<ParameterInfo>();
@@ -35,7 +33,6 @@ namespace DataLibrary.BusinessLogic
             IList<string> roles = DapperSqlHelper.GetRecords<string>("spGet_AccountRole", parameters);
             return roles;
         }
-
         public static IList<StudentModel> GetAccountByRole(int roleID)
         {
             List<ParameterInfo> parameters = new List<ParameterInfo>();
@@ -43,7 +40,6 @@ namespace DataLibrary.BusinessLogic
             IList<StudentModel> accounts = DapperSqlHelper.GetRecords<StudentModel>("spGet_AccountByRole", parameters);
             return accounts;
         }
-
         public static AccountInfo GetUserByUsername(string userName)
         {
             List<ParameterInfo> parameters = new List<ParameterInfo>();

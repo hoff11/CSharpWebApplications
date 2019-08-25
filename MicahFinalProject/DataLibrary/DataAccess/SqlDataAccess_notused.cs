@@ -8,9 +8,10 @@ using System.Configuration;
 using System.Data;
 using System.Data.SqlClient;
 
+#region Deprecated 
 namespace DataLibrary.DataAccess
 {
-    public static class SqlDataAccess
+    public static class SqlDataAccess_notused
     {
         //load from sql using dapper
         //no params you're getting all of it
@@ -45,3 +46,4 @@ namespace DataLibrary.DataAccess
         }
     }
 }
+#endregion

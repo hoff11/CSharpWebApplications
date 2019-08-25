@@ -11,6 +11,13 @@ namespace DataLibrary.DataAccess
 {
     public static class DapperSqlHelper
     {
+        /// <summary>
+        /// Get a single Record using dapper (Stored proc, params)
+        /// </summary>
+        /// <typeparam name="T"></typeparam>
+        /// <param name="spName"></param>
+        /// <param name="parameters"></param>
+        /// <returns></returns>
         public static T GetRecord<T>(string spName, List<ParameterInfo> parameters)
         {
             T objRecord = default(T);
@@ -28,7 +35,13 @@ namespace DataLibrary.DataAccess
             }
             return objRecord;
         }
-
+        /// <summary>
+        /// Get a list of Records using dapper (Stored proc, params)
+        /// </summary>
+        /// <typeparam name="T"></typeparam>
+        /// <param name="spName"></param>
+        /// <param name="parameters"></param>
+        /// <returns></returns>
         public static List<T> GetRecords<T>(string spName, List<ParameterInfo> parameters)
         {
             List<T> recordList = new List<T>();
